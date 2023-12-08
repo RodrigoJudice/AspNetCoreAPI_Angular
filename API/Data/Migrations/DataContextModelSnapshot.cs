@@ -23,12 +23,15 @@ namespace API.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
                         .HasColumnType("BLOB");
 
                     b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
                         .HasColumnType("BLOB");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
