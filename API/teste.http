@@ -1,0 +1,6 @@
+
+GET https://localhost:5001/api/users
+
+###
+
+GET https://localhost:5001/api/users/1
