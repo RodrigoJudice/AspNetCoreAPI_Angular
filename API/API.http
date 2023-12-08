@@ -1,6 +1,31 @@
-@API_HostAddress = http://localhost:5044
+@API_HostAddress = https://localhost:5001
 
-GET {{API_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{API_HostAddress}}/api/users
 
 ###
+
+GET {{API_HostAddress}}/api/users/4
+Authorization:  Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJKdWRpY2UiLCJuYmYiOjE3MDIwNjM2MjcsImV4cCI6MTcwMjY2ODQyNywiaWF0IjoxNzAyMDYzNjI3fQ.WOVbylJ_Sfq05d4fGA3BpFjk9l8u0wxLrxMUeZjlcHf-JJR7EWC68YvTkcXYrKJLCm3kI-1JEuGMRvIV_6H3lw
+
+
+### Accounts
+
+POST {{API_HostAddress}}/api/accounts
+Content-Type: application/json
+
+
+{
+    "username": "Judice",
+    "password": "password"
+    
+}
+
+### Login
+POST {{API_HostAddress}}/api/accounts/login
+Content-Type: application/json
+
+{
+    "username": "Judice",
+    "password": "password"
+    
+}

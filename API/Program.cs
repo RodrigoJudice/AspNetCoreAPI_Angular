@@ -1,17 +1,11 @@
-using API.Data;
-using Microsoft.EntityFrameworkCore;
-
+using API.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => c.EnableAnnotations());
-builder.Services.AddDbContext<DataContext>(options =>
-{
-  options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddCors();
+builder.Services.AddApplicationsServices(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -28,6 +22,9 @@ app.UseCors(builder =>
   .AllowAnyHeader()
   .AllowAnyMethod();
 });
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

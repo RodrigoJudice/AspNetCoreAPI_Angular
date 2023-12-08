@@ -1,22 +1,20 @@
-﻿namespace API.EndPoints;
+﻿namespace API.EndPoints.Users;
 
 using API.Data;
 using API.Entities;
 using Ardalis.ApiEndpoints;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Annotations;
 
-public class ListUsers : EndpointBaseAsync
+public class List(DataContext context) : EndpointBaseAsync
   .WithoutRequest
   .WithResult<IEnumerable<AppUser>>
 {
-  private readonly DataContext _context;
+  private readonly DataContext _context = context;
 
-  public ListUsers(DataContext context)
-  {
-    _context = context;
-  }
+  [Authorize]
   [HttpGet("/api/users")]
   [SwaggerOperation(
           Summary = "List all Authors",
