@@ -14,7 +14,7 @@ public class List(DataContext context) : EndpointBaseAsync
 {
   private readonly DataContext _context = context;
 
-  [Authorize]
+
   [HttpGet("/api/users")]
   [SwaggerOperation(
           Summary = "List all Authors",

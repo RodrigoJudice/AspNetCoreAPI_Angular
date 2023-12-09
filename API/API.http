@@ -1,6 +1,7 @@
 @API_HostAddress = https://localhost:5001
 
 GET {{API_HostAddress}}/api/users
+Authorization:  Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJKdWRpY2UiLCJuYmYiOjE3MDIwNjM2MjcsImV4cCI6MTcwMjY2ODQyNywiaWF0IjoxNzAyMDYzNjI3fQ.WOVbylJ_Sfq05d4fGA3BpFjk9l8u0wxLrxMUeZjlcHf-JJR7EWC68YvTkcXYrKJLCm3kI-1JEuGMRvIV_6H3lw
 
 ###
 
@@ -15,7 +16,7 @@ Content-Type: application/json
 
 
 {
-    "username": "Judice",
+    "username": "User4",
     "password": "password"
     
 }
